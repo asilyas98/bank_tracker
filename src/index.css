@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-apple-gray-50: var(--theme-color-bg-deep, #0C0C0D);
+  --color-apple-gray-100: var(--theme-color-bg-card, #1C1C1E);
+  --color-apple-gray-200: var(--theme-color-bg-border, #2C2C2E);
+  --color-apple-gray-300: var(--theme-color-text-muted, #8E8E93);
+  --color-apple-gray-400: var(--theme-color-text-secondary, #A1A1A5);
+  --color-apple-gray-500: var(--theme-color-text-light, #D2D2D7);
+  --color-apple-gray-600: var(--theme-color-text-main, #F5F5F5);
+  
+  --color-apple-blue: #0071e3;
+  --color-apple-green: #22C55E;
+  --color-apple-red: #EF4444;
+  --color-apple-orange: #ff9500;
+  --color-apple-purple: #af52de;
+  --color-apple-gold: var(--theme-color-primary, #E8D4A2);
+  --color-apple-gold-dark: var(--theme-color-primary-dark, #C5A059);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--theme-color-body-bg, #050505);
+  color: var(--theme-color-text-main, #F5F5F5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

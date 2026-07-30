@@ -1,0 +1,6 @@
+{
+  "name": "Bank Tracker",
+  "description": "An elegant Apple-styled bank tracking, budget planning, and payment simulation app with budget alerting and bank connection status.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

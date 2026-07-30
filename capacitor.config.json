@@ -1,0 +1,6 @@
+{
+  "appId": "com.simpleai.banktracker",
+  "appName": "Bank Tracker",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
