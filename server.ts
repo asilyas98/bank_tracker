@@ -45,6 +45,57 @@ async function startServer() {
     }
   }
 
+  // API: Download certificates / p12 keys
+  app.get('/download/ios_distribution.p12', (req, res) => {
+    const filePath = path.join(process.cwd(), 'public/ios_distribution_123456.p12');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/x-pkcs12');
+      res.setHeader('Content-Disposition', 'attachment; filename="ios_distribution.p12"');
+      return res.sendFile(filePath);
+    }
+    res.status(404).send('File not found');
+  });
+
+  app.get('/download/ios_distribution_123456.p12', (req, res) => {
+    const filePath = path.join(process.cwd(), 'public/ios_distribution_123456.p12');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/x-pkcs12');
+      res.setHeader('Content-Disposition', 'attachment; filename="ios_distribution_123456.p12"');
+      return res.sendFile(filePath);
+    }
+    res.status(404).send('File not found');
+  });
+
+  app.get('/download/ios_distribution_password.p12', (req, res) => {
+    const filePath = path.join(process.cwd(), 'public/ios_distribution_password.p12');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/x-pkcs12');
+      res.setHeader('Content-Disposition', 'attachment; filename="ios_distribution_password.p12"');
+      return res.sendFile(filePath);
+    }
+    res.status(404).send('File not found');
+  });
+
+  app.get('/download/ios_distribution_nopass.p12', (req, res) => {
+    const filePath = path.join(process.cwd(), 'public/ios_distribution_nopass.p12');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/x-pkcs12');
+      res.setHeader('Content-Disposition', 'attachment; filename="ios_distribution_nopass.p12"');
+      return res.sendFile(filePath);
+    }
+    res.status(404).send('File not found');
+  });
+
+  app.get('/download/ios_distribution.cer', (req, res) => {
+    const filePath = path.join(process.cwd(), 'ios_distribution.cer');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'application/x-x509-ca-cert');
+      res.setHeader('Content-Disposition', 'attachment; filename="ios_distribution.cer"');
+      return res.sendFile(filePath);
+    }
+    res.status(404).send('File not found');
+  });
+
   // API: Get health status
   app.get('/api/health', (req, res) => {
     res.json({ status: 'ok', environment: process.env.NODE_ENV || 'development' });
